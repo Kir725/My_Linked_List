@@ -238,17 +238,19 @@ public class MyLinkedList<E> implements ILinkedList<E> {
 
     public String toString() {
         Iterator<E> it = iterator();
-        if (!it.hasNext())
+        if (size == 0)
             return "[]";
 
         StringBuilder sb = new StringBuilder();
         sb.append('[');
-        for (; ; ) {
+        while(it.hasNext()){
             E e = it.next();
-            sb.append(e == this ? "(this Collection)" : e);
-            if (!it.hasNext())
-                return sb.append(']').toString();
-            sb.append(',').append(' ');
+            if(e != last.item) {
+                sb.append(e);
+                sb.append(',').append(' ');
+            }
         }
+        sb.append(last.item);
+        return sb.append(']').toString();
     }
 }

@@ -15,6 +15,8 @@ public class Main {
         list.add(3);
         list.add(4);
         list.add(5);
+        System.out.println(list);
+
         Iterator<Integer> iter = list.iterator();
         while (iter.hasNext()){
             System.out.println(iter.next());
@@ -69,7 +71,5 @@ public class Main {
         javaList.remove(80000);
         stop = System.nanoTime();
         System.out.println("javaList: " + (stop - start)+" ns");
-
-
     }
 }
